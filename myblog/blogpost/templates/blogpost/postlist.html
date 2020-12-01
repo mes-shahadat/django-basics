@@ -1,0 +1,63 @@
+{% extends 'blogpost/blogpostlayout.html' %}
+{% load static %}
+{% block title %}
+delete post
+{% endblock title %}
+{% block body %}
+{% if object_list %}
+<h2>this is postdetail page</h2>
+{% else %}
+<h1>there is no post ! <a href="{% url 'createposturl' %}">create one</a></h1>
+{% endif %}
+{% comment %}if you want to use elif you have to give it a condition. if you have no condition use else instead{% endcomment %}
+{% if is_paginated %}
+{% for post in page_obj %}
+
+<!-- Title -->
+<h1 class="mt-4">{{post.title}}</h1>
+
+<!-- Author -->
+<p class="lead">
+created by: <a href="#" title="currently no url available">{{post.createdby}}. </a>
+</p>
+
+<!-- Post Content -->
+<p class="lead">{{post.desc | truncatewords:30}} <a href="{% url 'postdetailurl' post.id %}">readmore</a></p>
+
+<hr>
+<!-- Date/Time -->
+<p>published at: {{post.publish_date}}</p>
+<p>updated at: {{post.updated_at}}</p>
+
+{% endfor %}
+<div>
+    {% if page_obj.has_previous %}
+    <a href="?page={{page_obj.previous_page_number}}">previous page</a>
+    {% endif %}
+    <span>page {{page_obj.number}} of {{page_obj.paginator.num_pages}}</span>
+    {% if page_obj.has_next %}
+    <a href="?page={{page_obj.next_page_number}}">next page</a>
+    {% endif %}
+</div>
+{% else %}
+{% for post in object_list %}
+
+<!-- Title -->
+<h1 class="mt-4">{{post.title}}</h1>
+
+<!-- Author -->
+<p class="lead">
+created by: <a href="#" title="currently no url available">{{post.createdby}}. </a>
+</p>
+
+<!-- Post Content -->
+<p class="lead">{{post.desc | truncatewords:30}} <a href="{% url 'postdetailurl' post.id %}">readmore</a></p>
+
+<hr>
+<!-- Date/Time -->
+<p>published at: {{post.publish_date}}</p>
+<p>updated at: {{post.updated_at}}</p>
+
+{% endfor %}
+{% endif %}
+{% endblock body %}

@@ -1,0 +1,14 @@
+{% extends 'global/layout.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'registration/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'registration/css/registration_style.css' %}">
+{% endblock css %}
+{% block navigation %}
+<a href="{% url 'registerurl' %}" title="hit register url">register,</a>
+<a href="{% url 'userloginurl' %}" title="hit login url">login,</a>
+<a href="{% url 'profileurl' %}" title="hit profile url">profile,</a>
+<a href="{% url 'userlogouturl' %}" title="hit logout url">logout,</a>
+<a href="{% url 'changepassurl' %}" title="hit changepass url">changepass,</a>
+<a href="{% url 'emailformurl' %}" title="hit resetpass url">resetpass.</a> 
+{% endblock navigation %}

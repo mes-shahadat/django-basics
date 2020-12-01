@@ -1,0 +1,11 @@
+{% extends 'global/layout.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'blogpost/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'blogpost/css/blogpost_style.css' %}">
+{% endblock css %}
+{% block navigation %}
+<a href="{% url 'contactformurl' %}" title="hit contactform url">contact form,</a>
+<a href="{% url 'createposturl' %}" title="hit create post url">create post,</a>
+<a href="{% url 'postlisturl' %}" title="hit post list url">post list.</a>
+{% endblock navigation %}

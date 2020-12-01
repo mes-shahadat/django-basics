@@ -1,0 +1,18 @@
+{% extends 'global/layout.html' %}
+{% block title %}
+home page
+{% endblock title %}
+{% block body %}
+<h3>antor</h3>
+<h3>zihad</h3>
+<h3>abdur</h3>
+<h3>yasin</h3>
+{% if cache_data %}
+<h2>best movie name is: {{cache_data}}</h2>
+{% endif %}
+{% if cache_data2 %}
+<h2>best movie name is: {{cache_data2}}</h2>
+<h2>best movie name is: {{cache_data2.kono_name}}</h2>
+<h2>best movie name is: {{cache_data2.kimetsu_name}}</h2>
+{% endif %}
+{% endblock body %}

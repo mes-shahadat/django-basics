@@ -1,0 +1,9 @@
+{% extends 'registration/registrationlayout.html' %}
+{% load static %}
+{% block title %}
+login page
+{% endblock title %}
+{% block body %}
+<h1>this reset successfull page</h1>
+<p>Your password has been set. You can <a href="{% url 'userloginurl' %}">log in now</a></p>
+{% endblock body %}

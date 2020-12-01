@@ -1,0 +1,10 @@
+{% extends 'registration/registrationlayout.html' %}
+{% load static %}
+{% block title %}
+login page
+{% endblock title %}
+{% block body %}
+<h1>this is change password done page</h1>
+<h2>password changed successfully</h2>
+<a href="{% url 'profileurl' %}">profile</a>
+{% endblock body %}

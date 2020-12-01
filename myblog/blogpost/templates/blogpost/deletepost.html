@@ -1,0 +1,13 @@
+{% extends 'blogpost/blogpostlayout.html' %}
+{% load static %}
+{% block title %}
+delete post
+{% endblock title %}
+{% block body %}
+<h1>confirm delete ! Are you sure?</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="submit" value="delete">
+    </form>
+    <a href="{url 'postlisturl'}">cancel</a>
+{% endblock body %}

@@ -1,0 +1,25 @@
+{% extends 'registration/registrationlayout.html' %}
+{% load static %}
+{% block title %}
+profile page
+{% endblock title %}
+{% block body %}
+<h1>this is profile page</h1>
+<h2>fullname: {{fullname}}</h2>
+<h2>user: {{user}}</h2>
+<h3>groups: {% for group in groups %} {{group.name}}. {% endfor %}</h3> <br>
+
+<form action="" method="post" novalidate>
+    {% csrf_token %}
+    {% include 'global/form.html' %}
+    <input type="submit" value="save">
+</form>
+ <br>
+{% if not users == None %}
+<h2>other users:
+{% for user in users %}
+ <a href="{% url 'profileinturl' user.id %}">{{user.username}}</a>
+{% endfor %}
+</h2>
+{% endif %}
+{% endblock body %}

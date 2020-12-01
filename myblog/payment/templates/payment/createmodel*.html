@@ -1,0 +1,14 @@
+{% extends 'payment/paymentlayout.html' %}
+{% load static %}
+{% block title %}
+create model
+{% endblock title %}
+{% block body %}
+<h1>this is create model page</h1>
+<form action="" method="post" novalidate>
+    {% csrf_token %}
+    {% include 'global/form.html' %}
+    <input type="submit" value="save">
+</form>
+<a href="#">cancel</a>
+{% endblock body %}

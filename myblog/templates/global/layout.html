@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block css %} {% endblock css %}
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+    {% include 'global/allappmainurls.html' %}
+    {% block navigation %}{% endblock navigation %}
+    <div class="container">
+        <div> <img src="{% static 'global/img/1.jpeg' %}" alt="owner logo"></div>
+        {% include 'global/messages.html' %}
+        {% block body %}{% endblock body %}
+    </div>
+    <script src="{% static 'global/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'global/js/jquery.js' %}"></script>
+    <script src="{% static 'global/js/popper.min.js' %}"></script>
+</body>
+</html>

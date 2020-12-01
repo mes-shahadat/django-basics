@@ -1,0 +1,172 @@
+{% extends 'payment/paymentlayout.html' %}
+{% load static %}
+{% block title %}
+create model
+{% endblock title %}
+{% block body %}
+<h1>this is model list page</h1>
+
+{% if modelstudent_list %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th scope="col">age</th>
+        <th scope="col">fees</th>
+        <th scope="col">details</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      {% for field in modelstudent_list %}
+      <tr>
+        <th scope="row">{{field.id}}</th>
+        <td>{{field.name}}</td>
+        <td>{{field.age}}</td>
+        <td>{{field.fees}}</td>
+        <td><a href="{% url 'modelstudentdetailurl' field.id %}" class="btn btn-primary " >view</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+
+{% if modelteacher_list %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th scope="col">age</th>
+        <th scope="col">date</th>
+        <th scope="col">salary</th>
+        <th scope="col">details</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      {% for field in modelteacher_list %}
+      <tr>
+        <th scope="row">{{field.id}}</th>
+        <td>{{field.name}}</td>
+        <td>{{field.age}}</td>
+        <td>{{field.date}}</td>
+        <td>{{field.salary}}</td>
+        <td><a href="{% url 'modelteacherdetailurl' field.id %}" class="btn btn-primary " >view</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+
+{% if modelcontractor_list %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th scope="col">age</th>
+        <th scope="col">date</th>
+        <th scope="col">payment</th>
+        <th scope="col">details</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      {% for field in modelcontractor_list %}
+      <tr>
+        <th scope="row">{{field.id}}</th>
+        <td>{{field.name}}</td>
+        <td>{{field.age}}</td>
+        <td>{{field.date}}</td>
+        <td>{{field.payment}}</td>
+        <td><a href="{% url 'modelcontractordetailurl' field.id %}" class="btn btn-primary " >view</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+
+{% if modelcenter_list %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">center name</th>
+        <th scope="col">city</th>
+        <th scope="col">details</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      {% for field in modelcenter_list %}
+      <tr>
+        <th scope="row">{{field.id}}</th>
+        <td>{{field.center_name}}</td>
+        <td>{{field.city}}</td>
+        <td><a href="{% url 'modelcenterdetailurl' field.id %}" class="btn btn-primary " >view</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+
+{% if modelcenterstudent_list %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">center name</th>
+        <th scope="col">city</th>
+        <th scope="col">name</th>
+        <th scope="col">roll</th>
+        <th scope="col">details</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      {% for field in modelcenterstudent_list %}
+      <tr>
+        <th scope="row">{{field.id}}</th>
+        <td>{{field.center_name}}</td>
+        <td>{{field.city}}</td>
+        <td>{{field.name}}</td>
+        <td>{{field.roll}}</td>
+        <td><a href="{% url 'modelcenterstudentdetailurl' field.id %}" class="btn btn-primary " >view</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+
+{% if proxymodelcenterstudent_list %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">center name</th>
+        <th scope="col">city</th>
+        <th scope="col">name</th>
+        <th scope="col">roll</th>
+        <th scope="col">details</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      {% for field in proxymodelcenterstudent_list %}
+      <tr>
+        <th scope="row">{{field.id}}</th>
+        <td>{{field.center_name}}</td>
+        <td>{{field.city}}</td>
+        <td>{{field.name}}</td>
+        <td>{{field.roll}}</td>
+        <td><a href="{% url 'proxymodelcenterstudentdetailurl' field.id %}" class="btn btn-primary " >view</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+   <br>
+<a href="#">home</a>
+{% endblock body %}

@@ -1,0 +1,35 @@
+{% extends 'global/layout.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'payment/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'payment/css/payment_style.css' %}">
+{% endblock css %}
+{% block navigation %}
+<!-- payment model student urls -->
+<a href="{% url 'createmodelstudenturl' %}" title="hit create model student url">create model student, </a>
+<a href="{% url 'modelstudentlisturl' %}" title="hit model list student url">model list.</a>
+<br>
+
+<!-- payment model teacher urls -->
+<a href="{% url 'createmodelteacherurl' %}" title="hit create model teacher url">create model teacher, </a>
+<a href="{% url 'modelteacherlisturl' %}" title="hit model list teacher url">model list.</a>
+<br>
+
+<!-- payment model contractor urls -->
+<a href="{% url 'createmodelcontractorurl' %}" title="hit create model contractor url">create model contractor, </a>
+<a href="{% url 'modelcontractorlisturl' %}" title="hit model list contractor url">model list.</a>
+<br>
+
+<!-- payment model center urls -->
+<a href="{% url 'createmodelcenterurl' %}" title="hit create model center url">create model center, </a>
+<a href="{% url 'modelcenterlisturl' %}" title="hit model list center url">model list.</a> <br>
+
+<!-- payment model center student urls -->
+<a href="{% url 'createmodelcenterstudenturl' %}" title="hit create model center student url">create model center student, </a>
+<a href="{% url 'modelcenterstudentlisturl' %}" title="hit model list center student url">model list.</a> <br>
+
+
+<!-- payment proxy model center student urls -->
+<a href="{% url 'createproxymodelcenterstudenturl' %}" title="hit create proxy model center student url">create proxy model center student, </a>
+<a href="{% url 'proxymodelcenterstudentlisturl' %}" title="hit proxy model list center student url">proxy model list.</a>
+{% endblock navigation %}

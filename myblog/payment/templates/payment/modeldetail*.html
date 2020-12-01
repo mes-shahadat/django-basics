@@ -1,0 +1,220 @@
+{% extends 'payment/paymentlayout.html' %}
+{% load static %}
+{% block title %}
+create model
+{% endblock title %}
+{% block body %}
+<h1>this is model detail page</h1>
+
+{% if modelstudent %}
+<table class="table">
+  <tr>
+    <th>id:</th>
+    <td>{{modelstudent.id}}</td>
+  </tr>
+  <tr>
+    <th>name:</th>
+    <td>{{modelstudent.name}}</td>
+  </tr>
+  <tr>
+    <th>age:</th>
+    <td>{{modelstudent.age}}</td>
+  </tr>
+  <tr>
+    <th>fees:</th>
+    <td>{{modelstudent.fees}}</td>
+  </tr>
+  {% if perms.payment.change_modelstudent %}
+    <tr>
+      <td>
+      <a href="{% url 'updatemodelstudenturl' modelstudent.id %}" class="btn btn-warning " >edit</a>
+  {% endif %}
+      
+  {% if perms.payment.delete_modelstudent %}
+      <a href="{% url 'deletemodelstudenturl' modelstudent.id %}" class="btn btn-danger " >delete</a>
+  {% endif %}
+      </td>
+    </tr>
+
+</table>
+{% endif %}
+
+{% if modelteacher %}
+<table class="table">
+  <tr>
+    <th>id:</th>
+    <td>{{modelteacher.id}}</td>
+  </tr>
+  <tr>
+    <th>name:</th>
+    <td>{{modelteacher.name}}</td>
+  </tr>
+  <tr>
+    <th>age:</th>
+    <td>{{modelteacher.age}}</td>
+  </tr>
+  <tr>
+    <th>date:</th>
+    <td>{{modelteacher.date}}</td>
+  </tr>
+  <tr>
+    <th>salary:</th>
+    <td>{{modelteacher.salary}}</td>
+  </tr>
+  {% if perms.blogpost.change_modelpost %}
+    <tr>
+      <td>
+      <a href="{% url 'updatemodelteacherurl' modelteacher.id %}" class="btn btn-warning " >edit</a>
+  {% endif %}
+      
+  {% if perms.blogpost.delete_modelpost %}
+      <a href="{% url 'deletemodelteacherurl' modelteacher.id %}" class="btn btn-danger " >delete</a>
+  {% endif %}
+      </td>
+    </tr>
+
+  </table>
+{% endif %}
+
+{% if modelcontractor %}
+<table class="table">
+  <tr>
+    <th>id:</th>
+    <td>{{modelcontractor.id}}</td>
+  </tr>
+  <tr>
+    <th>name:</th>
+    <td>{{modelcontractor.name}}</td>
+  </tr>
+  <tr>
+    <th>age:</th>
+    <td>{{modelcontractor.age}}</td>
+  </tr>
+  <tr>
+    <th>date:</th>
+    <td>{{modelcontractor.date}}</td>
+  </tr>
+  <tr>
+    <th>payment:</th>
+    <td>{{modelcontractor.payment}}</td>
+  </tr>
+  {% if perms.blogpost.change_modelpost %}
+    <tr>
+      <td>
+      <a href="{% url 'updatemodelcontractorurl' modelcontractor.id %}" class="btn btn-warning " >edit</a>
+  {% endif %}
+      
+  {% if perms.blogpost.delete_modelpost %}
+      <a href="{% url 'deletemodelcontractorurl' modelcontractor.id %}" class="btn btn-danger " >delete</a>
+  {% endif %}
+      </td>
+    </tr>
+
+  </table>
+{% endif %}
+
+{% if modelcenter %}
+<table class="table">
+  <tr>
+    <th>id:</th>
+    <td>{{modelcenter.id}}</td>
+  </tr>
+  <tr>
+    <th>center name:</th>
+    <td>{{modelcenter.center_name}}</td>
+  </tr>
+  <tr>
+    <th>city:</th>
+    <td>{{modelcenter.city}}</td>
+  </tr>
+  {% if perms.blogpost.change_modelpost %}
+    <tr>
+      <td>
+      <a href="{% url 'updatemodelcenterurl' modelcenter.id %}" class="btn btn-warning " >edit</a>
+  {% endif %}
+      
+  {% if perms.blogpost.delete_modelpost %}
+      <a href="{% url 'deletemodelcenterurl' modelcenter.id %}" class="btn btn-danger " >delete</a>
+  {% endif %}
+      </td>
+    </tr>
+
+  </table>
+{% endif %}
+
+{% if modelcenterstudent %}
+<table class="table">
+  <tr>
+    <th>id:</th>
+    <td>{{modelcenterstudent.id}}</td>
+  </tr>
+  <tr>
+    <th>center name:</th>
+    <td>{{modelcenterstudent.center_name}}</td>
+  </tr>
+  <tr>
+    <th>city:</th>
+    <td>{{modelcenterstudent.city}}</td>
+  </tr>
+  <tr>
+    <th>name:</th>
+    <td>{{modelcenterstudent.name}}</td>
+  </tr>
+  <tr>
+    <th>roll:</th>
+    <td>{{modelcenterstudent.roll}}</td>
+  </tr>
+  {% if perms.blogpost.change_modelpost %}
+    <tr>
+      <td>
+      <a href="{% url 'updatemodelcenterstudenturl' modelcenterstudent.id %}" class="btn btn-warning " >edit</a>
+  {% endif %}
+      
+  {% if perms.blogpost.delete_modelpost %}
+      <a href="{% url 'deletemodelcenterstudenturl' modelcenterstudent.id %}" class="btn btn-danger " >delete</a>
+  {% endif %}
+      </td>
+    </tr>
+
+  </table>
+{% endif %}
+
+{% if proxymodelcenterstudent %}
+<table class="table">
+  <tr>
+    <th>id:</th>
+    <td>{{proxymodelcenterstudent.id}}</td>
+  </tr>
+  <tr>
+    <th>center name:</th>
+    <td>{{proxymodelcenterstudent.center_name}}</td>
+  </tr>
+  <tr>
+    <th>city:</th>
+    <td>{{proxymodelcenterstudent.city}}</td>
+  </tr>
+  <tr>
+    <th>name:</th>
+    <td>{{proxymodelcenterstudent.name}}</td>
+  </tr>
+  <tr>
+    <th>roll:</th>
+    <td>{{proxymodelcenterstudent.roll}}</td>
+  </tr>
+  {% if perms.blogpost.change_modelpost %}
+    <tr>
+      <td>
+      <a href="{% url 'updateproxymodelcenterstudenturl' proxymodelcenterstudent.id %}" class="btn btn-warning " >edit</a>
+  {% endif %}
+      
+  {% if perms.blogpost.delete_modelpost %}
+      <a href="{% url 'deleteproxymodelcenterstudenturl' proxymodelcenterstudent.id %}" class="btn btn-danger " >delete</a>
+  {% endif %}
+      </td>
+    </tr>
+
+  </table>
+{% endif %}
+<br>
+<a href="#">home</a>
+{% endblock body %}

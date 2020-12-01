@@ -1,0 +1,13 @@
+{% extends 'global/layout.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'sessioncookie/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'sessioncookie/css/sessioncookie_style.css' %}">
+{% endblock css %}
+{% block navigation %}
+<a href="{% url 'sessioncookieurl' %}" title="hit sessioncooki url">sessioncookie,</a>
+<a href="{% url 'setsessioncookieurl' %}" title="hit set sessioncookie url">set sessioncookie,</a>
+<a href="{% url 'getsessioncookieurl' %}" title="hit get sessioncookies url">get sessioncookies,</a>
+<a href="{% url 'delsessioncookieurl' %}" title="hit delete sessioncookie url">delete sessioncookie,</a>
+<a href="{% url 'testsessioncookieurl' %}" title="hit test sessioncookie url">test sessioncookie.</a>
+{% endblock navigation %}

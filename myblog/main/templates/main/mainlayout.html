@@ -1,0 +1,14 @@
+{% extends 'global/layout.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'main/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'main/css/main_style.css' %}">
+{% endblock css %}
+{% block navigation %}
+<a href="{% url 'homeurl' %}" title="hit home url">homepage,</a>
+<a href="{% url 'contacturl' %}" title="hit contact url">contact,</a>
+<a href="{% url 'contactcacheurl' %}" title="hit contact cache url">contact cache,</a>
+<a href="{% url 'abouturl' %}" title="hit about url">about,</a>
+<a href="{% url 'clearcacheurl' %}" title="hit about url">clear cache,</a>
+<a href="{% url 'debugurl' %}" target="_blank" title="hit debug url">debug.</a>
+{% endblock navigation %}
